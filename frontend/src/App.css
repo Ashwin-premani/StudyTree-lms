@@ -1,0 +1,563 @@
+/* Enhanced App.css with Chat and Slides Features */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2575fc;
+  --secondary-color: #2c3e50;
+  --background-color: #f4f7f9;
+  --card-background: #ffffff;
+  --text-color: #34495e;
+  --light-text-color: #7f8c8d;
+  --border-color: #e0e5ea;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.main-content {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--card-background);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--primary-color) !important;
+}
+.navbar .btn-nav {
+  font-weight: 500;
+  color: var(--secondary-color);
+  border: 2px solid transparent;
+}
+.navbar .btn-nav:hover {
+  color: var(--primary-color);
+}
+.navbar .btn-primary-solid {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+.navbar .btn-primary-solid:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* --- Home Page --- */
+.hero-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #134686 0%, #2575fc 100%);
+  color: white;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.hero-section h1 { font-size: 3rem; font-weight: 700; }
+.hero-section p { font-size: 1.2rem; opacity: 0.9; }
+.btn-hero {
+  background-color: #fff;
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.btn-hero:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+}
+
+.feature-card {
+  background: var(--card-background);
+  border: none;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-shadow);
+}
+.icon-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: white;
+}
+.icon-transcription { background: linear-gradient(135deg, #2980b9, #6dd5fa); }
+.icon-quiz { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.icon-chatbot { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+.icon-ppt { background: linear-gradient(135deg, #f39c12, #f1c40f); }
+
+/* --- Enhanced Upload Page --- */
+.upload-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.upload-card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.upload-method-toggle .btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.upload-method-toggle .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.upload-method-toggle .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* --- Lectures List & Detail Page --- */
+.lecture-card {
+  cursor: pointer;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.lecture-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+.lecture-title { font-weight: 600; }
+.lecture-detail-view .nav-tabs {
+  border-bottom: 2px solid var(--border-color);
+}
+.lecture-detail-view .nav-tabs .nav-link {
+  border: none;
+  font-weight: 500;
+  color: var(--light-text-color);
+  padding: 0.75rem 1.25rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s ease;
+}
+.lecture-detail-view .nav-tabs .nav-link:not(.active):hover {
+  color: var(--secondary-color);
+}
+.lecture-detail-view .nav-tabs .nav-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: none;
+}
+.lecture-detail-view .nav-tabs .nav-link:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.tab-pane-card {
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.status-item {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.status-item.completed {
+  border-left: 5px solid var(--success-color);
+  color: var(--success-color);
+  background-color: rgba(39, 174, 96, 0.05);
+}
+.status-item.pending {
+  border-left: 5px solid var(--warning-color);
+  color: var(--warning-color);
+  background-color: rgba(243, 156, 18, 0.05);
+}
+
+.status-item i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lecture-thumbnail {
+  height: 180px;
+  object-fit: cover;
+}
+
+.lecture-card .card-body {
+  padding: 1.25rem;
+}
+
+.lecture-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 50px;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.7em;
+}
+
+/* --- Enhanced Content Styling --- */
+.transcript-content {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--primary-color);
+  line-height: 1.8;
+  font-family: 'Georgia', serif;
+}
+
+.summary-content {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--success-color);
+}
+
+.summary-content h6 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* --- Quiz Styling --- */
+.quiz-question {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.quiz-question:hover {
+  background-color: #e9ecef;
+}
+
+.quiz-question .badge {
+  font-size: 0.9rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.explanation {
+  border-left: 4px solid var(--primary-color);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Slides/PPT Styling --- */
+.slide-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.slide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--primary-color);
+}
+
+.slide-card img {
+  transition: transform 0.3s ease;
+}
+
+.slide-card:hover img {
+  transform: scale(1.05);
+}
+
+.slide-card .card-body {
+  padding: 1rem;
+}
+
+.slide-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* --- Chat Styling --- */
+.chat-messages {
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.chat-message-user {
+  background: linear-gradient(135deg, var(--primary-color), #7c4dff);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(94, 93, 240, 0.3);
+  animation: slideInRight 0.3s ease;
+}
+
+.chat-message-bot {
+  background: white;
+  color: var(--text-color);
+  padding: 0.75rem 1rem;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.chat-input-group {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.chat-input-group:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(94, 93, 240, 0.25);
+}
+
+.chat-input-group input {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+}
+
+.chat-input-group input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.chat-input-group button {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.chat-input-group button:hover:not(:disabled) {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.chat-input-group button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Loading States --- */
+.loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.typing-indicator::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--light-text-color);
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator::before {
+  content: '● ● ●';
+  color: var(--light-text-color);
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-10px); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .upload-card {
+    padding: 1.5rem;
+  }
+
+  .lecture-detail-view .nav-tabs .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .chat-message-user,
+  .chat-message-bot {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .status-item {
+    padding: 1rem;
+  }
+}
+
+/* --- Accessibility --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* --- Enhanced Animations --- */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
